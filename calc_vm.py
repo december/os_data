@@ -40,7 +40,7 @@ for addr in va:
         valid = (pte & 0x80) >> 7
         pte = pte & 0x7f
         pa = (pte << 5) + c
-        print '    --> pte index:' + str(hex(b)) + '  pte content:(valid ' + str(valid) + ', pfn ' + str(hex(pte)) + ')\n'
+        print 'pte index:' + str(hex(b)) + '  pte content:(valid ' + str(valid) + ', pfn ' + str(hex(pte)) + ')\n'
         if valid == 0:
             print 'To Disk Sector Address ' + str(hex(pa)) + ' --> Value: ' + str(hex(disk[pa])) + '\n'
         else:
