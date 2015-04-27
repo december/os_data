@@ -37,8 +37,8 @@ print 'Here is the job list, with the run time of each job: '
 
 import operator
 
-def job_cmp(job1, job2):
-    return cmp(job1[1], job2[1])
+def compare(a, b):
+    return cmp(a[1], b[1])
 
 joblist = []
 if options.jlist == '':
@@ -61,7 +61,7 @@ if options.solve == True:
 		#YOUR CODE
         print 'Execution trace:'
         thetime = 0
-        joblist.sort(job_cmp)
+        joblist.sort(compare)
         for job in joblist:
             print '[ time %3d ] Run job %d for %3.2f secs (DONE at %3.2f)' %(thetime,job[0], job[1], thetime+job[1])
             thetime += job[1]
@@ -94,7 +94,7 @@ if options.solve == True:
         print 'Execution trace:'
 		#YOUR CODE
         for job in joblist:
-            print '[ time %3d ] Run job %d for %3.2f secs (DONE at %3.2f)' %(thetime,job[0], job[1], thetime+job[1])
+            print '[ time %3d ] Run job %d for %3.2f secs (DONE at %3.2f)' %(thetime,job[0], job[1], thetime + job[1])
             thetime += job[1]
          
         print '\nFinal statistics:'
